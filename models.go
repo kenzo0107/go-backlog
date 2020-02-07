@@ -235,13 +235,13 @@ type Project struct {
 // Activity represents
 // +gen * slice:"Where,Count,SortBy,GroupBy[string],GroupBy[int],GroupBy[bool],first,MaxBy,MinBy,Distinct,DistinctBy,Shuffle"
 type Activity struct {
-	ID      *int     `json:"id,omitempty"`
-	Project *Project `json:"project,omitempty"`
-	Type    *int     `json:"type,omitempty"`
-	Content *Content `json:"content,omitempty"`
-	// Notifications *Notification `json:"notifications,omitempty"` // TODO
-	CreatedUser *User      `json:"createdUser,omitempty"`
-	Created     *time.Time `json:"created,omitempty"`
+	ID            *int            `json:"id,omitempty"`
+	Project       *Project        `json:"project,omitempty"`
+	Type          *int            `json:"type,omitempty"`
+	Content       *Content        `json:"content,omitempty"`
+	Notifications []*Notification `json:"notifications,omitempty"`
+	CreatedUser   *User           `json:"createdUser,omitempty"`
+	Created       *time.Time      `json:"created,omitempty"`
 }
 
 // Content represents
@@ -255,6 +255,15 @@ type Content struct {
 	Changes     *ChangeSlice    `json:"changes,omitempty"`
 	Attachments AttachmentSlice `json:"attachments,omitempty"`
 	SharedFile  *SharedFile     `json:"shared_files,omitempty"`
+}
+
+// Notification represents
+type Notification struct {
+	ID                  *int  `json:"id,omitempty"`
+	AlreadyRead         *bool `json:"alreadyRead,omitempty"`
+	Reason              *int  `json:"reason,omitempty"`
+	User                *User `json:"user,omitempty"`
+	ResourceAlreadyRead *bool `json:"resourceAlreadyRead,omitempty"`
 }
 
 // Change represents
