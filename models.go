@@ -102,13 +102,20 @@ type Version struct {
 // User represents
 // +gen * slice:"Where,Count,SortBy,GroupBy[string],GroupBy[int],GroupBy[bool],first,MaxBy,MinBy,Distinct,DistinctBy,Shuffle"
 type User struct {
-	ID           *int    `json:"id,omitempty"`
-	UserID       *string `json:"userId,omitempty"`
-	Name         *string `json:"name,omitempty"`
-	RoleType     *int    `json:"roleType,omitempty"`
-	Lang         *string `json:"lang,omitempty"`
-	MailAddress  *string `json:"mailAddress,omitempty"`
-	NulabAccount *string `json:"nulabAccount,omitempty"`
+	ID           *int          `json:"id,omitempty"`
+	UserID       *string       `json:"userId,omitempty"`
+	Name         *string       `json:"name,omitempty"`
+	RoleType     *int          `json:"roleType,omitempty"`
+	Lang         *string       `json:"lang,omitempty"`
+	MailAddress  *string       `json:"mailAddress,omitempty"`
+	NulabAccount *NulabAccount `json:"nulabAccount,omitempty"`
+}
+
+// NulabAccount represents
+type NulabAccount struct {
+	NulabID  *string `json:"nulabId,omitempty"`
+	Name     *string `json:"name,omitempty"`
+	UniqueID *string `json:"uniqueId,omitempty"`
 }
 
 // CustomField represents
