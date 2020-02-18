@@ -254,7 +254,7 @@ type Content struct {
 	Comment     *Comment        `json:"comment,omitempty"`
 	Changes     *ChangeSlice    `json:"changes,omitempty"`
 	Attachments AttachmentSlice `json:"attachments,omitempty"`
-	SharedFile  *SharedFile     `json:"shared_files,omitempty"`
+	SharedFiles SharedFileSlice `json:"shared_files,omitempty"`
 }
 
 // Notification represents
